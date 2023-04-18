@@ -19,7 +19,10 @@ DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
 DocumentBuilder db = dbf.newDocumentBuilder();
 
-Document doc = db.parse("C:\\Users\\wyatt\\Box\\Spring 2023\\Web app\\JSPAssignment1\\OnlineExamSystem\\src\\main\\WebApp\\assignment.xml");
+//**********
+// This path needs to be the ABSOLUTE FILE PATH where the xml file is stored.
+//**********
+Document doc = db.parse("D:\\Documents\\GitHub\\JSP-Assignement1\\src\\main\\WebApp\\assignment.xml");
     NodeList assignment = doc.getElementsByTagName("assignment");
     NodeList questionsL = doc.getElementsByTagName("questions");
     NodeList questionL = doc.getElementsByTagName("question");
