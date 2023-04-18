@@ -1,14 +1,20 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="javax.xml.parsers.DocumentBuilderFactory,javax.xml.parsers.DocumentBuilder,org.w3c.dom.*" errorPage="" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Arrays" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
-  User: wyatt
+  User: Wyatt LeMaster
   Date: 4/14/2023
   Time: 7:57 PM
-  To change this template use File | Settings | File Templates.
+  JSP Assignment 1
+  Comp 6000
+
+  This program will read questions and answers from assignment.xml and display them as options for an online quiz.
+  The user can select the answers to the questions and press submit to see their score. The quiz will clear all
+  questions when submitted allowing the user to take it again.
 --%>
 <%
+
+    //creates doc elements that allow access to the data inside the xml
 DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
 DocumentBuilder db = dbf.newDocumentBuilder();
@@ -26,8 +32,11 @@ Document doc = db.parse("C:\\Users\\wyatt\\Box\\Spring 2023\\Web app\\JSPAssignm
 </head>
 
 <body>
+<h1> Exam Page </h1>
+
 
 <%
+    // for loops to build arrays that hold questions and answers.
     String[] questions = new String[questionL.getLength()];
 
     for (int i = 0; i <= questionL.getLength()-1; i++) {
@@ -40,21 +49,19 @@ Document doc = db.parse("C:\\Users\\wyatt\\Box\\Spring 2023\\Web app\\JSPAssignm
         answers[j]=(answerL.item(j).getFirstChild().getNodeValue());
     }
 
-  //  List<String> questions = new ArrayList<>(Arrays.asList("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"));
-   // List<String> answers = new ArrayList<>(Arrays.asList("true", "false", "true", "false", "true", "false", "true", "false", "true", "false"));
-
 %>
 
 <form>
 
   <%
+      // loop that allows printing of each question
       int k = 1;
       for (String question : questions) {
   %>
 
-    <%=question%>
+        <%=k%> <%=question%>
 
-  <br/><br/>
+  <br/>
 
   True: <input type="radio" name="answer<%=k%>" value="True" required />
   False: <input type="radio" name="answer<%=k%>" value="False" required />   <br/><br/>
@@ -63,9 +70,12 @@ Document doc = db.parse("C:\\Users\\wyatt\\Box\\Spring 2023\\Web app\\JSPAssignm
 
         }
     %>
-    <input type="submit" value="Submit" name="submit"   />  <br/><br/>
+
+
+    <input type="submit" value="Submit" name="submit"   /> <br/><br/>
 </form>
 <%
+    // checks the score by comparing the inputted results against the answers.
     int score = 0;
     if (request.getParameter("submit") != null) {
         int j = 1;
@@ -76,16 +86,21 @@ Document doc = db.parse("C:\\Users\\wyatt\\Box\\Spring 2023\\Web app\\JSPAssignm
             }
             j++;
         }
-        System.out.println("Your Score is: " + score); // this might be wrong
+
     }
-
-
 %>
 
-Your Score is <%=score%> // this displays the score to the user.
+<h1> Your Score is <%=score%> </h1>
 
 
+<style>
 
+form
+{
+    background: gainsboro;
+}
+
+</style>
 
 </body>
 </html>
