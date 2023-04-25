@@ -9,9 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dc3b386-8ead-42c9-be0f-3916899fbcbc" name="Changes" comment="Added code from class">
+    <list default="true" id="7dc3b386-8ead-42c9-be0f-3916899fbcbc" name="Changes" comment="Before modifications to music store files">
       <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/WebApp/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/BookModel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/models/MusicModel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/models/UserModel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
@@ -31,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -192,7 +194,7 @@
       <workItem from="1681521690869" duration="4886000" />
       <workItem from="1681846842213" duration="3556000" />
       <workItem from="1682363704762" duration="312000" />
-      <workItem from="1682364178024" duration="8024000" />
+      <workItem from="1682364178024" duration="8357000" />
     </task>
     <task id="LOCAL-00001" summary="Added code from class">
       <created>1681522385741</created>
@@ -208,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681522440376</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Before modifications to music store files">
+      <created>1682445912119</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682445912119</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +236,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added code from class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added code from class" />
+    <MESSAGE value="Before modifications to music store files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Before modifications to music store files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
