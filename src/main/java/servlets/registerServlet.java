@@ -12,8 +12,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "LoginServlet", value = "/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "registerServlet", value = "/registerServlet")
+public class registerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
@@ -21,25 +21,24 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        //String username = request.getParameter("username");
+        //String password = request.getParameter("password");
 
         String fixed_password ="1234";
         String fixed_userName = "earpboy";
 
 
-        if (username.equals(fixed_userName) && password.equals(fixed_password)) {
+        //if (username.equals(fixed_userName) && password.equals(fixed_password)) {
 
-            UserModel userModel = new UserModel(1,"jarod","Luther",username,password);
-        //UserModel userModel = new UserModel(1,"jarod","Luther",fixed_userName,fixed_password);
+        //UserModel userModel = new UserModel(1,"jarod","Luther",username,password);
+        UserModel userModel = new UserModel(1,"jarod","Luther",fixed_userName,fixed_password);
 
         HttpSession session = request.getSession();
 
-            session.setAttribute("user", userModel);
+        session.setAttribute("user", userModel);
 
-           // RequestDispatcher requestDispatcher = request.getRequestDispatcher("/FetchBookServlet");
-           // requestDispatcher.forward(request, response);
-
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/FetchBookServlet");
+        requestDispatcher.forward(request, response);
             /*
             List<BookModel> list = new ArrayList<>();
             list.add(new BookModel(1, 1, "back in black",1, 1));
@@ -48,18 +47,17 @@ public class LoginServlet extends HttpServlet {
             list.add(new BookModel(1, 1, "Camping or dummies",1, 1));
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
             session.setAttribute("List_of_Books", list);
-
+            //RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
+            requestDispatcher.forward(request, response);
 */
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-            request.setAttribute("login", true);
-            requestDispatcher.forward(request, response);
-        }
-        else {
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("Login.jsp");
-            request.setAttribute("error", "Incorrect email or password");
-            requestDispatcher.forward(request, response);
-        }
-        }
+
+        //}
+        //  else {
+        // RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+        // request.setAttribute("error", "Incorrect email or pasword");
+        //requestDispatcher.forward(request, response);
+        //}
+    }
         /*
         // TASKS
         // ONE SERVLET FOR ONE TASK
@@ -93,5 +91,5 @@ public class LoginServlet extends HttpServlet {
     }
 
          */
-    }
+}
 

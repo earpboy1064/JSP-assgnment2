@@ -10,18 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dc3b386-8ead-42c9-be0f-3916899fbcbc" name="Changes" comment="Before modifications to music store files">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/WebApp/home.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/BookModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/MusicModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/UserModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/WebApp/Login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/WebApp/Style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/WebApp/register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/WebApp/reserve.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/MySQLdb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/FetchBookServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/registerServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/WebApp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/home.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/WebApp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onlineexamsystem/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onlineexamsystem/HelloResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/MusicModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/MusicModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +50,12 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2ORNuLvtp8cmEFS4Zlf5qn6CUD0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -62,7 +72,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Documents/GitHub/JSP-Assignement2/src/main/WebApp",
+    "last_opened_file_path": "D:/Documents/GitHub/JSP-Assignement2/src/main/java/services",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,16 +92,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\java\services" />
+      <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\java\servlets" />
       <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\WebApp" />
       <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\java\Servlets" />
       <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\java\Models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\WebApp" />
+      <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\WebApp\WEB-INF" />
       <recent name="D:\Documents\GitHub\JSP-Assignement1\src\main\WebApp" />
       <recent name="D:\Documents\GitHub\JSP-Assignement1\src\main\resources" />
       <recent name="C:\Users\wyatt\Box\Spring 2023\Web app\JSPAssignment1\OnlineExamSystem\src\main\WebApp" />
-      <recent name="C:\Users\wyatt\Box\Spring 2023\Web app\JSPAssignment1\OnlineExamSystem\src\main\XML" />
-      <recent name="C:\Users\wyatt\Box\Spring 2023\Web app\JSPAssignment1\OnlineExamSystem\src\main\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -194,7 +206,7 @@
       <workItem from="1681521690869" duration="4886000" />
       <workItem from="1681846842213" duration="3556000" />
       <workItem from="1682363704762" duration="312000" />
-      <workItem from="1682364178024" duration="8357000" />
+      <workItem from="1682364178024" duration="25588000" />
     </task>
     <task id="LOCAL-00001" summary="Added code from class">
       <created>1681522385741</created>
@@ -217,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682445912119</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Before modifications to music store files">
+      <created>1682445958847</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682445958847</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +257,17 @@
     <MESSAGE value="Added code from class" />
     <MESSAGE value="Before modifications to music store files" />
     <option name="LAST_COMMIT_MESSAGE" value="Before modifications to music store files" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/servlets/FetchBookServlet.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

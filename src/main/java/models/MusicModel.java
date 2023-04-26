@@ -7,6 +7,7 @@ public class MusicModel {
     String song_name;
     String album_name;
 
+
     public MusicModel(int song_id, int album_id, String song_name, String album_name) {
         this.song_id = song_id;
         this.album_id = album_id;
