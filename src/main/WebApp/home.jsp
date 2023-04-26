@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="models.UserModel" %>
+<%@ page import="models.MusicModel" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -8,20 +10,23 @@
 </head>
 <body>
 
-<% if(request.getSession() != null){
+<%if(request.getSession() != null){
 
-        if(session.getAttribute("session_name") != null){
+        if(session.getAttribute("user") != null){
 
-            UserModel user = (UserModel) session.getAttribute("session_name");
-            %>
+            UserModel user = (UserModel) session.getAttribute("user");
 
-<p> Hello, <%=user.getName() %></p>
+%>
 
-<c:forEach var="each_music" items="${List_of_Music}" >
-    <p> ${each_music.getSong_name() }</p>
+<p> Hello, <%=user.getFname() %>, <%=user.getLname() %> </p>
+<p> <a href="LogoutServlet"> Logout </a></p>
+
+<form action ="LoginServlet">
+<c:forEach var="each_book" items="${list_of_books}" >
+    <p> ${each_book.getBook_name() }</p>
 
 </c:forEach>
-
+</form>
 <%
 
 } else {
