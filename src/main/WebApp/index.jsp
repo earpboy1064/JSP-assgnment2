@@ -121,7 +121,7 @@ create a view reserved book page.
          </form>
 
              </div>
-             <div class = "flex-"></divclass>
+             <div class = "flex-"></div>
              <div class = "d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
 
              <c:forEach var="each_book" items="${list_of_books}">

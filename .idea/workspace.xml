@@ -9,18 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dc3b386-8ead-42c9-be0f-3916899fbcbc" name="Changes" comment="basic functionality is working.&#10;&#10;You can view books by their topic or just all the books. You can also log in and the system can tell if you are logged in.">
-      <change afterPath="$PROJECT_DIR$/src/main/WebApp/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/WebApp/dropdowns.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/WebApp/headers.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/WebApp/sign-in.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2023_1_05_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2023_1_05_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/WebApp/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/Login.jsp" afterDir="false" />
+    <list default="true" id="7dc3b386-8ead-42c9-be0f-3916899fbcbc" name="Changes" comment="Added styling">
       <change beforePath="$PROJECT_DIR$/src/main/WebApp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/WebApp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/MySQLdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/MySQLdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/registerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/registerServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682491808972</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added styling">
+      <created>1682712405475</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682712405476</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +295,8 @@
     <MESSAGE value="Added code from class" />
     <MESSAGE value="Before modifications to music store files" />
     <MESSAGE value="basic functionality is working.&#10;&#10;You can view books by their topic or just all the books. You can also log in and the system can tell if you are logged in." />
-    <option name="LAST_COMMIT_MESSAGE" value="basic functionality is working.&#10;&#10;You can view books by their topic or just all the books. You can also log in and the system can tell if you are logged in." />
+    <MESSAGE value="Added styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added styling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
