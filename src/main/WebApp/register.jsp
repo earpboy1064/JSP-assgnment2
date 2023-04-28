@@ -7,8 +7,8 @@
 <body>
 
 
-<form action="LoginServlet" method="post" onsubmit="return validate()">
-    userID: <input id="username" name="username" type="text" /> <br/>
+<form action="registerServlet" method="post" onsubmit="return validate()">
+    username: <input id="username" name="username" type="text" /> <br/>
     Password: <input id="password" name="password" type="password" /> <br/>
     Password Verify: <input id="passwordVerify" name="passwordVerify" type="password" /> <br/>
     First Name: <input id="firstName" name="firstName" type="text" /> <br/>

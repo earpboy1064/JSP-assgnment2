@@ -10,7 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dc3b386-8ead-42c9-be0f-3916899fbcbc" name="Changes" comment="basic functionality is working.&#10;&#10;You can view books by their topic or just all the books. You can also log in and the system can tell if you are logged in.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/51d080ec-cf19-41ac-bb9c-8995e816e4a3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/51d080ec-cf19-41ac-bb9c-8995e816e4a3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2023_1_05_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2023_1_05_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/WebApp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/WebApp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/MySQLdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/MySQLdb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/registerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/registerServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +39,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -75,7 +81,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Documents/GitHub/JSP-Assignement2/src/main/java/services",
+    "last_opened_file_path": "C:/Users/wyatt/Box/Spring 2023/Web app/JSP/MusicStore-1/MusicStore",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -110,6 +116,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="JSP-assgnment2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="JSP-assgnment2" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.87" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.87" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
       <deployment>
         <artifact name="OnlineExamSystem:war exploded">
@@ -210,6 +229,7 @@
       <workItem from="1681846842213" duration="3556000" />
       <workItem from="1682363704762" duration="312000" />
       <workItem from="1682364178024" duration="27546000" />
+      <workItem from="1682555770400" duration="14102000" />
     </task>
     <task id="LOCAL-00001" summary="Added code from class">
       <created>1681522385741</created>
@@ -280,12 +300,27 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlets/FetchBookServlet.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/main/java/servlets/registerServlet.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/services/MySQLdb.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/services/MySQLdb.java</url>
+          <line>149</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="((ResultSetImpl)IDresult).session" custom="com.mysql.cj.jdbc.result.ResultSetImpl" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

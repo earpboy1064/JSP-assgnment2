@@ -50,6 +50,9 @@ create a view reserved book page.
  </form>
 
 
+
+
+
  <!--<input type="text" id="book" name="book" placeholder = "Search books..">-->
 
 <p>${error}</p>

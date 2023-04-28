@@ -3,12 +3,14 @@ package servlets;
 import models.BookModel;
 import models.MusicModel;
 import models.UserModel;
+import services.MySQLdb;
 //import services.MySQLdb;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,43 +23,64 @@ public class registerServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //String username = request.getParameter("username");
-        //String password = request.getParameter("password");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
 
-        String fixed_password ="1234";
-        String fixed_userName = "earpboy";
+
+        UserModel userModel = new UserModel(1, firstName, lastName, username, password);
 
 
-        //if (username.equals(fixed_userName) && password.equals(fixed_password)) {
-
-        //UserModel userModel = new UserModel(1,"jarod","Luther",username,password);
-        UserModel userModel = new UserModel(1,"jarod","Luther",fixed_userName,fixed_password);
+        //String fixed_password ="1234";
+        //String fixed_userName = "earpboy";
 
         HttpSession session = request.getSession();
 
         session.setAttribute("user", userModel);
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/FetchBookServlet");
+
+        MySQLdb db = MySQLdb.getInstance();
+        //if(session.getAttribute("user") != null) {
+
+
+        Boolean isSuccess = false;
+        try {
+            isSuccess = db.register(username, password, firstName, lastName);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+        request.setAttribute("login", true);
         requestDispatcher.forward(request, response);
-            /*
-            List<BookModel> list = new ArrayList<>();
-            list.add(new BookModel(1, 1, "back in black",1, 1));
-            list.add(new BookModel(2, 3, "Fire in the Sky",1, 1));
-            list.add(new BookModel(3, 1, "Under the black moon",6, 1));
-            list.add(new BookModel(1, 1, "Camping or dummies",1, 1));
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
-            session.setAttribute("List_of_Books", list);
-            //RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
-            requestDispatcher.forward(request, response);
+    }
+}
+
+
+    //if (username.equals(fixed_userName) && password.equals(fixed_password)) {
+
+    //UserModel userModel = new UserModel(1,"jarod","Luther",username,password);
+
+
+        /*
+        List<BookModel> list = new ArrayList<>();
+        list.add(new BookModel(1, 1, "back in black",1, 1));
+        list.add(new BookModel(2, 3, "Fire in the Sky",1, 1));
+        list.add(new BookModel(3, 1, "Under the black moon",6, 1));
+        list.add(new BookModel(1, 1, "Camping or dummies",1, 1));
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
+        session.setAttribute("List_of_Books", list);
+        //RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
+        requestDispatcher.forward(request, response);
 */
 
-        //}
-        //  else {
-        // RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-        // request.setAttribute("error", "Incorrect email or pasword");
-        //requestDispatcher.forward(request, response);
-        //}
-    }
+    //}
+    //  else {
+    // RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+    // request.setAttribute("error", "Incorrect email or pasword");
+    //requestDispatcher.forward(request, response);
+    //}
+
         /*
         // TASKS
         // ONE SERVLET FOR ONE TASK
@@ -91,5 +114,4 @@ public class registerServlet extends HttpServlet {
     }
 
          */
-}
 

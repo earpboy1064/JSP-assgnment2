@@ -57,6 +57,8 @@ public MySQLdb() {
         return instance;
     }
 
+
+
     /*
     public UserModel doLogin(String email, String password) throws SQLException {
         UserModel userModel = null;
@@ -123,6 +125,61 @@ public MySQLdb() {
 
     }
 
+    public Boolean register(String username, String password, String firstName,  String lastName) throws SQLException {
+        UserModel userModel = null;
+
+        // PreparedStatement
+
+//        String qLogin = "SELECT name FROM users WHERE email = ? AND password = ?";
+//        PreparedStatement preparedStatement = connection.prepareStatement(qLogin);
+//        preparedStatement.setString(1, email);
+//        preparedStatement.setString(2, password);
+//        ResultSet resultSet = preparedStatement.executeQuery();
+
+        String qGetID = "SELECT MAX(user_id) FROM users";
+        PreparedStatement preparedStatement = connection.prepareStatement(qGetID);
+        ResultSet IDresult = preparedStatement.executeQuery();
+
+
+        //String IDcheck = "SELECT MAX(user_id) FROM users";
+       // Statement IDstatement = connection.createStatement();
+
+       // ResultSet IDresult = IDstatement.executeQuery(IDcheck);
+        int id = 0;
+        try {
+            while(IDresult.next()) {
+                id = IDresult.getInt("MAX(user_id)");
+            }
+        }
+        catch(SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+
+        // Statement
+        String qLogin = "INSERT INTO users (user_id, fname, lname, username, password) VALUES ('"+id+1+"', '"+firstName+"', '"+lastName+"', '"+username+"', '"+password+"')";
+        Statement statement = connection.createStatement();
+        try {
+            int resultSet = statement.executeUpdate(qLogin);
+        }
+        catch(SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+        return true;
+       // preparedStatement.setString(1, firstName);
+       // preparedStatement.setString(2, lastName);
+        //preparedStatement.setString(3, username);
+        //preparedStatement.setString(4, password);
+
+        //ResultSet resultSet = preparedStatement.executeQuery(qLogin);
+
+
+        //preparedStatement.close();
+
+
+
+    }
 /*
     public List<MusicModel> fetchMusic(int albumid) throws SQLException {
         String qGetMusic = null;
@@ -177,6 +234,23 @@ public MySQLdb() {
         preparedStatement.close();
 
         return list;
+    }
+
+
+    // WHEN USING INSERT/UPDATE/DELETE --> executeUpdate()
+    // SELECT --> executeQuery()
+    public boolean doReserve(String user_id, int book_id) throws SQLException {
+        boolean result = false;
+        String qDoReserve = "INSERT INTO reservations VALUES(?, ?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(qDoReserve);
+        preparedStatement.setString(1, user_id);
+        preparedStatement.setInt(2, book_id);
+        int rows_update = preparedStatement.executeUpdate();
+        if(rows_update > 0) {
+            result = true;
+        }
+        preparedStatement.close();
+        return result;
     }
 
     /*
