@@ -10,9 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dc3b386-8ead-42c9-be0f-3916899fbcbc" name="Changes" comment="basic functionality is working.&#10;&#10;You can view books by their topic or just all the books. You can also log in and the system can tell if you are logged in.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/51d080ec-cf19-41ac-bb9c-8995e816e4a3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/51d080ec-cf19-41ac-bb9c-8995e816e4a3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/WebApp/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/WebApp/dropdowns.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/WebApp/headers.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/WebApp/sign-in.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2023_1_05_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2023_1_05_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/WebApp/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/Login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/WebApp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/WebApp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/MySQLdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/MySQLdb.java" afterDir="false" />
@@ -26,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -81,7 +85,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/wyatt/Box/Spring 2023/Web app/JSP/MusicStore-1/MusicStore",
+    "last_opened_file_path": "D:/Documents/GitHub/JSP-Assignement2/src/main/WebApp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -101,9 +105,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\WebApp" />
       <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\java\services" />
       <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\java\servlets" />
-      <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\WebApp" />
       <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\java\Servlets" />
       <recent name="D:\Documents\GitHub\JSP-Assignement2\src\main\java\Models" />
     </key>
@@ -301,7 +305,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/servlets/registerServlet.java</url>
-          <line>42</line>
+          <line>43</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

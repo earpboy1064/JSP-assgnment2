@@ -157,7 +157,8 @@ public MySQLdb() {
         }
 
         // Statement
-        String qLogin = "INSERT INTO users (user_id, fname, lname, username, password) VALUES ('"+id+1+"', '"+firstName+"', '"+lastName+"', '"+username+"', '"+password+"')";
+        id++;
+        String qLogin = "INSERT INTO users (user_id, fname, lname, username, password) VALUES ('"+id+"', '"+firstName+"', '"+lastName+"', '"+username+"', '"+password+"')";
         Statement statement = connection.createStatement();
         try {
             int resultSet = statement.executeUpdate(qLogin);

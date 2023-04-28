@@ -25,34 +25,40 @@ public class registerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String passwordConfirm = request.getParameter("passwordCON");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
 
-
-        UserModel userModel = new UserModel(1, firstName, lastName, username, password);
-
-
-        //String fixed_password ="1234";
-        //String fixed_userName = "earpboy";
-
-        HttpSession session = request.getSession();
-
-        session.setAttribute("user", userModel);
+        if (password.equals(passwordConfirm) == true) {
+            UserModel userModel = new UserModel(1, firstName, lastName, username, password);
 
 
-        MySQLdb db = MySQLdb.getInstance();
-        //if(session.getAttribute("user") != null) {
+            //String fixed_password ="1234";
+            //String fixed_userName = "earpboy";
+
+            HttpSession session = request.getSession();
+
+            session.setAttribute("user", userModel);
 
 
-        Boolean isSuccess = false;
-        try {
-            isSuccess = db.register(username, password, firstName, lastName);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            MySQLdb db = MySQLdb.getInstance();
+            //if(session.getAttribute("user") != null) {
+
+
+            Boolean isSuccess = false;
+            try {
+                isSuccess = db.register(username, password, firstName, lastName);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+            request.setAttribute("login", true);
+            requestDispatcher.forward(request, response);
+        } else {
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
+            request.setAttribute("error", "Passwords must match!");
+            requestDispatcher.forward(request, response);
         }
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-        request.setAttribute("login", true);
-        requestDispatcher.forward(request, response);
     }
 }
 
