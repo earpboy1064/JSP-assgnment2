@@ -1,3 +1,14 @@
+/*
+ *
+ *  JSP Assignment 2
+ *  Wyatt LeMaster
+ *  5/2/2023
+ *  servlet sets session data to logout a user.
+ *
+ *
+ */
+
+
 package servlets;
 
 import javax.servlet.*;

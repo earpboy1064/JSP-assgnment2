@@ -1,3 +1,14 @@
+/*
+ *
+ *  JSP Assignment 2
+ *  Wyatt LeMaster
+ *  5/2/2023
+ *  Controls the navigation to the reservations servlet
+ *
+ *
+ */
+
+
 package servlets;
 
 import javax.servlet.*;

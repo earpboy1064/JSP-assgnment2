@@ -1,8 +1,17 @@
+/*
+ *
+ *  JSP Assignment 2
+ *  Wyatt LeMaster
+ *  5/2/2023
+ *  servlet calls database to fetch book list object
+ *
+ *
+ */
+
+
 package servlets;
 
-//import models.AlbumModel;
 import models.BookModel;
-import models.MusicModel;
 import models.TopicModel;
 import services.MySQLdb;
 
@@ -12,35 +21,14 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
 
 @WebServlet(name = "FetchBookServlet", value = "/FetchBookServlet")
 public class FetchBookServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       // doPost(request, response);
+        doPost(request, response);
 
-        MySQLdb db = MySQLdb.getInstance();
-        HttpSession session = request.getSession();
-
-        try {
-            List<BookModel> bookModelList = db.fetchBook(999);
-            request.setAttribute("list_of_books", bookModelList);
-
-
-            List<TopicModel> TopicModelList = db.fetchTopic(999);
-            request.setAttribute("list_of_Topics", TopicModelList);
-            // List<AlbumModel> albumModelList = db.fetchAlbums();
-            // request.setAttribute("list_of_album", albumModelList);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
-
-        String file = (String) session.getAttribute("file");
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
-        requestDispatcher.forward(request, response);
 
 
     }
@@ -71,8 +59,6 @@ public class FetchBookServlet extends HttpServlet {
 
                 List<TopicModel> TopicModelList = db.fetchTopic(999);
                 request.setAttribute("list_of_Topics", TopicModelList);
-                // List<AlbumModel> albumModelList = db.fetchAlbums();
-                // request.setAttribute("list_of_album", albumModelList);
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -81,6 +67,9 @@ public class FetchBookServlet extends HttpServlet {
 
 
             String file = (String) session.getAttribute("file");
+
+            if(Objects.equals(file, "index.jsp")){file = "home.jsp";}
+
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
             requestDispatcher.forward(request, response);
 

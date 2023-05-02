@@ -1,3 +1,13 @@
+<!--
+*
+*  JSP Assignment 2
+*  Wyatt LeMaster
+*  5/2/2023
+*  JSP to display the register page
+*
+*
+-->
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -26,7 +36,7 @@
                 </a>
 
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="index.jsp" class="nav-link " aria-current="page">Home</a></li>
+                    <li class="nav-item"><a href="home.jsp" class="nav-link " aria-current="page">Home</a></li>
                     <li class="nav-item"><a href="register.jsp" class="nav-link active" aria-current="page">register</a></li>
                     <li class="nav-item"><a href="Login.jsp" class="nav-link " aria-current="page">Login</a></li>
                     <li class="nav-item"><a href="LogoutServlet" action="LogoutServlet" method="post" onclick="return validate()" class="nav-link" aria-current="page">Logout</a></li>

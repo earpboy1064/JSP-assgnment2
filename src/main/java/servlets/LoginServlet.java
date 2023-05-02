@@ -1,7 +1,16 @@
+/*
+ *
+ *  JSP Assignment 2
+ *  Wyatt LeMaster
+ *  5/2/2023
+ *  servlet logs in a user.
+ *
+ *
+ */
+
+
 package servlets;
 
-import models.BookModel;
-import models.MusicModel;
 import models.UserModel;
 import services.MySQLdb;
 //import services.MySQLdb;
@@ -11,8 +20,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -51,8 +59,10 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("user", user);
             session.setAttribute("loggedIn", true);
 
-
             String file = (String) session.getAttribute("file");
+
+            if(Objects.equals(file, "index.jsp")){file = "home.jsp";}
+
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
             requestDispatcher.forward(request, response);
         }

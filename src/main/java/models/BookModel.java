@@ -1,3 +1,14 @@
+/*
+*
+*  JSP Assignment 2
+*  Wyatt LeMaster
+*  5/2/2023
+*  Class represents a book object
+*
+*
+ */
+
+
 package models;
 
 public class BookModel {

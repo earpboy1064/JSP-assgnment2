@@ -1,3 +1,14 @@
+/*
+ *
+ *  JSP Assignment 2
+ *  Wyatt LeMaster
+ *  5/2/2023
+ *  Class represents a Topic object
+ *
+ *
+ */
+
+
 package models;
 
 public class TopicModel {

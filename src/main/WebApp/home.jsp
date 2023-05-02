@@ -1,16 +1,19 @@
+<!--
+*
+*  JSP Assignment 2
+*  Wyatt LeMaster
+*  5/2/2023
+*  JSP to display the home page and handle displaying the book data as well as reservations
+*
+*
+-->
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="models.UserModel" %>
-<%@ page import="models.MusicModel" %>
-<%@ page import="java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<!--
-Remaining Work to do:
-create register page for new user.
-modify login page so it checks against user data in database.
-create a view reserved book page.
-1. -->
+
 <head>
     <link href="<c:url value="sign-in.css" />" rel="stylesheet">
     <link href="<c:url value="headers.css" />" rel="stylesheet">
@@ -43,7 +46,7 @@ create a view reserved book page.
     <%
         boolean isLoggedIn = false;
         UserModel user = null;
-        session.setAttribute("file", "index.jsp");
+        session.setAttribute("file", "home.jsp");
         try {
             isLoggedIn = (boolean) session.getAttribute("loggedIn");
         }
@@ -103,15 +106,29 @@ create a view reserved book page.
                     </c:forEach>
                 </select>
                 <input type="submit" value="Filter" />
-                <input type="Button" value="Reserve Book" action="ReserveNavServlet" onclick="document.location='ReserveNavServlet'"/>
+
+                <!--<input type="Button" value="Reserve Book" action="ReserveNavServlet" onclick="document.location='ReserveNavServlet'"/>-->
             </form>
+
         </div>
     </div>
 
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-        <div class="overflow-hidden" style="max-height: 30vh;">
+        <div class="container px-5">
+            <form action ="ReserveServlet">
+                <div class="form-floating">
+                    <input id="Res_Book_ID" name="Res_Book_ID" type="text" placeholder="Res_Book_ID"/> <br/>
+                    <input type="submit" value="Reserve" />
+                </div>
+            </form>
+        </div>
+    </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+
+        <div class="overflow-scroll" style="max-height: 30vh;">
+
             <div class="container px-5">
-                <table>
+            <table>
                     <tr>
                         <th>Book ID </th>
                         <th>Book Name </th>
