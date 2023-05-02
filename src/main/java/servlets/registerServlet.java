@@ -55,11 +55,22 @@ public class registerServlet extends HttpServlet {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-            session.setAttribute("loggedIn", true);
-            request.setAttribute("login", true);
-            requestDispatcher.forward(request, response);
-        } else {
+
+            if (isSuccess == false)
+            {
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
+                request.setAttribute("error", "username already exists");
+                requestDispatcher.forward(request, response);
+
+            }
+            else {
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+                session.setAttribute("loggedIn", true);
+                request.setAttribute("login", true);
+                requestDispatcher.forward(request, response);
+            }
+        }
+        else {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
             request.setAttribute("error", "Passwords must match!");
             requestDispatcher.forward(request, response);

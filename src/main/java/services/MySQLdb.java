@@ -106,28 +106,39 @@ public class MySQLdb {
         ResultSet IDresult = preparedStatement.executeQuery();
 
 
+        String UsernameCheck = "SELECT * FROM users WHERE username = '" + username + "'";
+        PreparedStatement preparedStatementCheck = connection.prepareStatement(UsernameCheck);
+        ResultSet UsernameResult = preparedStatementCheck.executeQuery();
 
-        int id = 0;
-        try {
-            while (IDresult.next()) {
-                id = IDresult.getInt("MAX(user_id)");
+
+
+
+        if (UsernameResult.next()) {
+
+            return false;
+        }
+        else{
+            int id = 0;
+            try {
+                while (IDresult.next()) {
+                    id = IDresult.getInt("MAX(user_id)");
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+
+            id++; // adds one to the last ID
+            String qLogin = "INSERT INTO users (user_id, fname, lname, username, password) VALUES ('" + id + "', '" + firstName + "', '" + lastName + "', '" + username + "', '" + password + "')";
+            Statement statement = connection.createStatement();
+            try {
+                int resultSet = statement.executeUpdate(qLogin);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            return true;
+
+
         }
-
-        // Statement
-        id++;
-        String qLogin = "INSERT INTO users (user_id, fname, lname, username, password) VALUES ('" + id + "', '" + firstName + "', '" + lastName + "', '" + username + "', '" + password + "')";
-        Statement statement = connection.createStatement();
-        try {
-            int resultSet = statement.executeUpdate(qLogin);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return true;
-
-
 
     }
 

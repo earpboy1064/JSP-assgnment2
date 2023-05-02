@@ -9,24 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dc3b386-8ead-42c9-be0f-3916899fbcbc" name="Changes" comment="more advanced functionality is working.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/FetchReservationsServlet.java" afterDir="false" />
+    <list default="true" id="7dc3b386-8ead-42c9-be0f-3916899fbcbc" name="Changes" comment="Nearly done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/WebApp/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/Login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/WebApp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/WebApp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/WebApp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/WebApp/reserve.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WebApp/reserve.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/BookModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/BookModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/MusicModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/TopicModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TopicModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/UserModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/MySQLdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/MySQLdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/FetchBookServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/FetchBookServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/ReserveNavServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/ReserveNavServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/ReserveServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/ReserveServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/registerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/registerServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +83,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Facets",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
@@ -245,7 +230,7 @@
       <workItem from="1682982881333" duration="13519000" />
       <workItem from="1683008263354" duration="73000" />
       <workItem from="1683009458329" duration="26000" />
-      <workItem from="1683050993853" duration="12633000" />
+      <workItem from="1683050993853" duration="13318000" />
     </task>
     <task id="LOCAL-00001" summary="Added code from class">
       <created>1681522385741</created>
@@ -310,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683054816266</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Nearly done">
+      <created>1683064274100</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683064274100</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,19 +325,20 @@
     <MESSAGE value="basic functionality is working.&#10;&#10;You can view books by their topic or just all the books. You can also log in and the system can tell if you are logged in." />
     <MESSAGE value="Added styling" />
     <MESSAGE value="more advanced functionality is working." />
-    <option name="LAST_COMMIT_MESSAGE" value="more advanced functionality is working." />
+    <MESSAGE value="Nearly done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nearly done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/services/MySQLdb.java</url>
-          <line>258</line>
+          <line>269</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/services/MySQLdb.java</url>
-          <line>214</line>
+          <line>225</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
