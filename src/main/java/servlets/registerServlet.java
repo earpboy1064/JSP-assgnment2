@@ -21,6 +21,8 @@ public class registerServlet extends HttpServlet {
         doPost(request, response);
     }
 
+
+    //Password still needs to be verified.
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
@@ -52,6 +54,7 @@ public class registerServlet extends HttpServlet {
                 throw new RuntimeException(e);
             }
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+            session.setAttribute("loggedIn", true);
             request.setAttribute("login", true);
             requestDispatcher.forward(request, response);
         } else {

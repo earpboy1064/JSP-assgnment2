@@ -3,12 +3,14 @@ package servlets;
 import models.BookModel;
 import models.MusicModel;
 import models.UserModel;
+import services.MySQLdb;
 //import services.MySQLdb;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,35 +30,35 @@ public class LoginServlet extends HttpServlet {
         String fixed_userName = "earpboy";
 
 
-        if (username.equals(fixed_userName) && password.equals(fixed_password)) {
+        MySQLdb db = MySQLdb.getInstance();
+        //if(session.getAttribute("user") != null) {
 
-            UserModel userModel = new UserModel(1,"jarod","Luther",username,password);
+
+        UserModel user = null;
+        try {
+            user = db.doLogin(username, password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        if (user!=null) {
+
         //UserModel userModel = new UserModel(1,"jarod","Luther",fixed_userName,fixed_password);
 
         HttpSession session = request.getSession();
 
-            session.setAttribute("user", userModel);
+            session.setAttribute("user", user);
+            session.setAttribute("loggedIn", true);
 
-           // RequestDispatcher requestDispatcher = request.getRequestDispatcher("/FetchBookServlet");
-           // requestDispatcher.forward(request, response);
 
-            /*
-            List<BookModel> list = new ArrayList<>();
-            list.add(new BookModel(1, 1, "back in black",1, 1));
-            list.add(new BookModel(2, 3, "Fire in the Sky",1, 1));
-            list.add(new BookModel(3, 1, "Under the black moon",6, 1));
-            list.add(new BookModel(1, 1, "Camping or dummies",1, 1));
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
-            session.setAttribute("List_of_Books", list);
-
-*/
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-            request.setAttribute("login", true);
+            String file = (String) session.getAttribute("file");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
             requestDispatcher.forward(request, response);
         }
         else {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("Login.jsp");
-            request.setAttribute("error", "Incorrect email or password");
+            request.setAttribute("loginError", "Incorrect Username or password");
             requestDispatcher.forward(request, response);
         }
         }

@@ -3,6 +3,7 @@ package servlets;
 //import models.AlbumModel;
 import models.BookModel;
 import models.MusicModel;
+import models.TopicModel;
 import services.MySQLdb;
 
 import javax.servlet.*;
@@ -22,22 +23,28 @@ public class FetchBookServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int topic_id = 999;
+        String Book_name = "";
         HttpSession session = request.getSession();
         MySQLdb db = MySQLdb.getInstance();
         if (session != null) {
             //if(session.getAttribute("user") != null) {
 
 
-            if (request.getParameter("topic_id") != "") {
+
+            if(request.getParameter("topic_id") != null) {
                 topic_id = Integer.parseInt(request.getParameter("topic_id"));
             }
 
 
-            // get music
+
+
             try {
                 List<BookModel> bookModelList = db.fetchBook(topic_id);
                 request.setAttribute("list_of_books", bookModelList);
 
+
+                List<TopicModel> TopicModelList = db.fetchTopic(999);
+                request.setAttribute("list_of_Topics", TopicModelList);
                 // List<AlbumModel> albumModelList = db.fetchAlbums();
                 // request.setAttribute("list_of_album", albumModelList);
 
@@ -45,7 +52,10 @@ public class FetchBookServlet extends HttpServlet {
                 e.printStackTrace();
             }
 
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+
+
+            String file = (String) session.getAttribute("file");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
             requestDispatcher.forward(request, response);
 
 

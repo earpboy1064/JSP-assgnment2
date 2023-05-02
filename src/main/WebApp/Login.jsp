@@ -35,7 +35,12 @@
             </a>
 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="index.jsp" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link " aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="register.jsp" class="nav-link" aria-current="page">register</a></li>
+                <li class="nav-item"><a href="Login.jsp" class="nav-link active" aria-current="page">Login</a></li>
+                <li class="nav-item"><a href="LogoutServlet" action="LogoutServlet" method="post" onclick="return validate()" class="nav-link" aria-current="page">Logout</a></li>
+                <li class="nav-item"><a href="ReserveNavServlet" action="ReserveNavServlet" method="post" onclick="return validate()" class="nav-link" aria-current="page">Reservations</a></li>
+
             </ul>
         </header>
     </div>
@@ -61,28 +66,13 @@
 </form>
 
     </br>
-    <p>${error}</p>
+    <p>${loginError}</p>
+
+
+
+
 </main>
 
 </body>
-<!--
-<script>
-    function validate() {
-        var email = document.getElementById("email").value
-        var password = document.getElementById("password").value
-        const re_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if(email === "") {
-            document.getElementById("error_msg").innerHTML = "Please enter email."
-            result = false;
-        } else if(password === "") {
-            document.getElementById("error_msg").innerHTML = "Please enter password."
-            result = false
-        } else {
-            result = re_email.test(email)
-            document.getElementById("error_msg").innerHTML = "Email is not valid."
-        }
-        return result
-    }
-</script>
--->
+
 </html>

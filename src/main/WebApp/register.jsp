@@ -26,9 +26,11 @@
                 </a>
 
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="index.jsp" class="nav-link" aria-current="page">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">register</a></li>
-                    <li class="nav-item"><a href="Login.jsp" class="nav-link" aria-current="page">Login</a></li>
+                    <li class="nav-item"><a href="index.jsp" class="nav-link " aria-current="page">Home</a></li>
+                    <li class="nav-item"><a href="register.jsp" class="nav-link active" aria-current="page">register</a></li>
+                    <li class="nav-item"><a href="Login.jsp" class="nav-link " aria-current="page">Login</a></li>
+                    <li class="nav-item"><a href="LogoutServlet" action="LogoutServlet" method="post" onclick="return validate()" class="nav-link" aria-current="page">Logout</a></li>
+                    <li class="nav-item"><a href="ReserveNavServlet" action="ReserveNavServlet" method="post" onclick="return validate()" class="nav-link" aria-current="page">Reservations</a></li>
 
                 </ul>
             </header>
@@ -57,7 +59,7 @@
         <label for="passwordCON">Password verify</label>
     </div>
 
-    <p>${error}</p>
+    <p style="color:red; font-family: Verdana ">${error}</p>
 
 
     <div class="form-floating">
@@ -80,48 +82,6 @@
 
 
 
-<!--
-<form action="registerServlet" method="post" onsubmit="return validate()">
-    username: <input id="username" name="username" type="text" /> <br/>
-    Password: <input id="password" name="password" type="password" /> <br/>
-    Password Verify: <input id="passwordVerify" name="passwordVerify" type="password" /> <br/>
-    First Name: <input id="firstName" name="firstName" type="text" /> <br/>
-    Last Name: <input id="lastName" name="lastName" type="text" /> <br/>
-
-    <input type="submit" name="Login" value="Login" /> <br/> </br>
-    <span id="error_msg"></span>
-</form>
-
-<form action="LoginServlet" method="post" onsubmit="return validate()">
-
-    <input type="submit" name="browse" value="browse">
-</form>
-
-
-<p>${error}</p>
-
-<a href="hello-servlet">Hello Servlet</a>
--->
 </main>
 </body>
-<!--
-<script>
-    function validate() {
-        var email = document.getElementById("email").value
-        var password = document.getElementById("password").value
-        const re_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if(email === "") {
-            document.getElementById("error_msg").innerHTML = "Please enter email."
-            result = false;
-        } else if(password === "") {
-            document.getElementById("error_msg").innerHTML = "Please enter password."
-            result = false
-        } else {
-            result = re_email.test(email)
-            document.getElementById("error_msg").innerHTML = "Email is not valid."
-        }
-        return result
-    }
-</script>
--->
 </html>

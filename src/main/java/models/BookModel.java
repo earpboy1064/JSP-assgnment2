@@ -4,6 +4,10 @@ public class BookModel {
     int book_id;
     int topics_id;
     String book_name;
+
+
+
+    String Author_name;
     int author_id;
     int is_available;
 
@@ -13,6 +17,7 @@ public class BookModel {
         this.book_name = book_name;
         this.author_id = author_id;
         this.is_available = is_available;
+        Author_name = "";
     }
 
 
@@ -54,5 +59,13 @@ public class BookModel {
 
     public void setIs_available(int is_available) {
         this.is_available = is_available;
+    }
+
+    public String getAuthor_name() {
+        return Author_name;
+    }
+
+    public void setAuthor_name(String author_name) {
+        Author_name = author_name;
     }
 }

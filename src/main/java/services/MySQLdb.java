@@ -3,6 +3,7 @@ package services;
 //import models.AlbumModel;
 import models.BookModel;
 import models.MusicModel;
+import models.TopicModel;
 import models.UserModel;
 
 import java.sql.*;
@@ -104,7 +105,7 @@ public MySQLdb() {
 
 
         // Statement
-        String qLogin = "SELECT fname FROM users WHERE username = '"+ username +"' AND password = '"+ password +"'";
+        String qLogin = "SELECT * FROM users WHERE username = '"+ username +"' AND password = '"+ password +"'";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(qLogin);
 
@@ -117,11 +118,15 @@ public MySQLdb() {
 
 
             userModel = new UserModel(id, fname, lname, username,password);
-        }
-        resultSet.close();
-        statement.close();
+            resultSet.close();
+            statement.close();
 //        preparedStatement.close();
-        return userModel;
+            return userModel;
+        }
+
+        else {
+            return null;
+        }
 
     }
 
@@ -206,7 +211,7 @@ public MySQLdb() {
 
         return list;
     }
-*/
+
 
     public List<BookModel> fetchBook(int topic_id_in) throws SQLException {
         String qGetBook = null;
@@ -236,22 +241,95 @@ public MySQLdb() {
 
         return list;
     }
+*/
+    public List<BookModel> fetchBook(int topic_ID) throws SQLException {
+        String qGetBook = null;
+        List<BookModel> list = new ArrayList<>();
+        if(topic_ID == 999) {
+            qGetBook = "SELECT B.book_id, B.topic_id, B.book_name, B.author_id, B.is_available, A.author_name FROM books as B, authors as A WHERE A.author_id = B.author_id;";
+        }
+        else {
+
+            qGetBook = "SELECT B.book_id, B.topic_id, B.book_name, B.author_id, B.is_available, A.author_name FROM books as B, authors as A WHERE A.author_id = B.author_id AND B.topic_id = '" + topic_ID + "'";
+        }
+        PreparedStatement preparedStatement = connection.prepareStatement(qGetBook);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while(resultSet.next()) {
+            int book_id = resultSet.getInt("book_id");
+            int topic_id = resultSet.getInt("topic_id");
+            String book_name = resultSet.getString("book_name");
+            int author_id = resultSet.getInt("author_id");
+            int is_available = resultSet.getInt("is_available");
+            String Author_name = resultSet.getString("author_name");
+
+            BookModel bookModel = new BookModel( book_id,  topic_id, book_name, author_id, is_available);
+            bookModel.setAuthor_name(Author_name);
+            list.add(bookModel);
+        }
+        resultSet.close();
+        preparedStatement.close();
+
+        return list;
+    }
+
+    public List<TopicModel> fetchTopic(int topic_id_in) throws SQLException {
+        String qGetTopic = null;
+        List<TopicModel> list = new ArrayList<>();
+        if(topic_id_in == 999) {
+            qGetTopic = "SELECT T.topic_id, T.topic_name FROM topics as T";
+        }
+        else {
+
+            qGetTopic = "SELECT T.topic_id, T.topic_name FROM topics as T WHERE T.topic_id = '" + topic_id_in + "'";
+        }
+        PreparedStatement preparedStatement = connection.prepareStatement(qGetTopic);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while(resultSet.next()) {
+            int topic_id = resultSet.getInt("topic_id");
+            String topic_name = resultSet.getString("topic_name");
+
+            TopicModel topicModel = new TopicModel( topic_id, topic_name);
+
+            list.add(topicModel);
+        }
+        resultSet.close();
+        preparedStatement.close();
+
+        return list;
+    }
 
 
     // WHEN USING INSERT/UPDATE/DELETE --> executeUpdate()
     // SELECT --> executeQuery()
-    public boolean doReserve(String user_id, int book_id) throws SQLException {
+    public boolean doReserve(UserModel user, int book_id) throws SQLException {
         boolean result = false;
-        String qDoReserve = "INSERT INTO reservations VALUES(?, ?)";
-        PreparedStatement preparedStatement = connection.prepareStatement(qDoReserve);
-        preparedStatement.setString(1, user_id);
-        preparedStatement.setInt(2, book_id);
-        int rows_update = preparedStatement.executeUpdate();
-        if(rows_update > 0) {
-            result = true;
+        int userID = user.getUser_id();
+        if (book_id == 999) {
+
+            return false;
         }
-        preparedStatement.close();
-        return result;
+        else {
+
+            String qDoReserve = "INSERT INTO reservations VALUES(?, ?)";
+            String qBooksUpdate = "UPDATE books SET is_available = ? WHERE book_id = ?;";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(qDoReserve);
+            preparedStatement.setInt(1, userID);
+            preparedStatement.setInt(2, book_id);
+            int rows_update = preparedStatement.executeUpdate();
+
+            PreparedStatement preparedStatemenUpdate = connection.prepareStatement(qBooksUpdate);
+            preparedStatemenUpdate.setInt(1, 0);
+            preparedStatemenUpdate.setInt(2, book_id);
+
+            int Books_update = preparedStatemenUpdate.executeUpdate();
+            if (rows_update > 0 && Books_update>0) {
+                result = true;
+            }
+            preparedStatement.close();
+            preparedStatemenUpdate.close();
+            return result;
+        }
     }
 
     /*
