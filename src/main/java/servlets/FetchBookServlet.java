@@ -17,8 +17,34 @@ import java.util.List;
 public class FetchBookServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+       // doPost(request, response);
+
+        MySQLdb db = MySQLdb.getInstance();
+        HttpSession session = request.getSession();
+
+        try {
+            List<BookModel> bookModelList = db.fetchBook(999);
+            request.setAttribute("list_of_books", bookModelList);
+
+
+            List<TopicModel> TopicModelList = db.fetchTopic(999);
+            request.setAttribute("list_of_Topics", TopicModelList);
+            // List<AlbumModel> albumModelList = db.fetchAlbums();
+            // request.setAttribute("list_of_album", albumModelList);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
+        String file = (String) session.getAttribute("file");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
+        requestDispatcher.forward(request, response);
+
+
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

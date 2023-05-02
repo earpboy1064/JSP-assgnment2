@@ -19,19 +19,35 @@
             background-color: #D6EEEE;
         }
     </style>
-<%
+    <%
         boolean isLoggedIn = false;
-
+        UserModel user = null;
         session.setAttribute("file", "reserve.jsp");
+        try {
+            isLoggedIn = (boolean) session.getAttribute("loggedIn");
+        }
+        catch(Exception e) {
+
+        }
+
+        String message = "";
+        if (isLoggedIn) {
+
+
+            user = (UserModel) session.getAttribute("user");
+            message = user.getUsername();
+        }
+        else {
+            message = "logged out";
+        }
+
         %>
 
     <link href="<c:url value="sign-in.css" />" rel="stylesheet">
     <link href="<c:url value="headers.css" />" rel="stylesheet">
     <link href="<c:url value="dropdowns.css" />" rel="stylesheet">
-
     <link href="headers.css" rel="stylesheet">
     <link href="<c:url value="bootstrap.min.css" />" rel="stylesheet">
-
     <link href="<c:url value="Style.css" />" rel="stylesheet">
     <title>Sessions and Cookies</title>
 
@@ -50,10 +66,12 @@
                 </a>
 
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="index.jsp" class="nav-link active" aria-current="page">Home</a></li>
+                    <li class="nav-item"><a href="index.jsp" class="nav-link " aria-current="page">Home</a></li>
                     <li class="nav-item"><a href="register.jsp" class="nav-link" aria-current="page">register</a></li>
-                    <li class="nav-item"><a href="Login.jsp" class="nav-link" aria-current="page">Login</a></li>
+                    <li class="nav-item"><a href="ReserveNavServlet" action="ReserveNavServlet" method="post" onclick="return validate()" class="nav-link active" aria-current="page">Reservations</a></li>
+
                 </ul>
+                <p><h2><%=message%></h2></p>
             </header>
         </div>
     </div>

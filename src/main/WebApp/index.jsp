@@ -25,6 +25,7 @@ create a view reserved book page.
 
 </head>
 <body>
+
  <main>
 
      <style>
@@ -41,6 +42,7 @@ create a view reserved book page.
 
      <%
          boolean isLoggedIn = false;
+         UserModel user = null;
          session.setAttribute("file", "index.jsp");
          try {
              isLoggedIn = (boolean) session.getAttribute("loggedIn");
@@ -52,7 +54,8 @@ create a view reserved book page.
          String message = "";
          if (isLoggedIn) {
 
-             message = "logged in";
+             user = (UserModel) session.getAttribute("user");
+             message = user.getUsername();
          }
          else {
              message = "logged out";
